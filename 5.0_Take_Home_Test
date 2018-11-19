@@ -1,4 +1,8 @@
 '''
+HONOR CODE: I solemnly promise that while taking this test I will only use PyCharm or the Internet,
+but I will definitely not ask another person except the instructor. Signed: ______________________
+
+
 1. Write a Python program that will use a FOR loop to print your name
      10 times, and then the word Done at the end.
  '''  
