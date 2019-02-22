@@ -49,8 +49,8 @@ but I will definitely not ask another person except the instructor. Signed: ____
      
      * Ask the user for seven numbers
      * Print the total sum of the numbers
-     * Print the count of the positive entries, the number entries equal to zero,
-     and the number of negative entries. Use an if, elif, else chain, not just three
+     * Print the count of the positive entries, the count of entries equal to zero,
+     and the count of negative entries. Use an if, elif, else chain, not just three
      if statements.
       
 '''
