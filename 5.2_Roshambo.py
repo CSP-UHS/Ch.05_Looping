@@ -12,13 +12,69 @@ When the user quits print an end game message and their win/loss/tie record
 
 '''
 
+import random
+player=0
+computer=0
+done=False
+
+while done==False:
+    again = True
+    print()
+    print("1.Rock")
+    print("2.Paper")
+    print("3.Scissors")
+    print("4.quit")
+    y=int(input("type 1,2,3,or 4:"))
+    print()
+    if y==1:
+        print("Rock")
+    elif y==2:
+        print("Paper")
+    elif y==3:
+        print("Scissors")
+    else:
+        done=True
+        again=False
+
+    while again==True:
+        print("Vs.")
+
+        x=random.randint(1,3)
+        if x==1:
+            print("Rock")
+        elif x==2:
+            print("Paper")
+        else:
+            print("Scissors")
+
+        print()
+
+        if x==y:
+            print("Tie")
+        elif x==1 and y==2:
+            print("You win")
+            player+=1
+        elif x==1 and y==3:
+            print("The computer wins")
+            computer+=1
+        elif x==2 and y==1:
+            print("The computer wins")
+            computer+=1
+        elif x==2 and y==3:
+            print("You win")
+            player+=1
+        elif x==3 and y==1:
+            print("You win")
+            player+=1
+        elif x==3 and y==2:
+            print("The computer wins")
+            computer+=1
+        again=False
+        print()
+        print("Your current score is, ",computer,"computer",player,"player")
 
 
-
-
-
-
-
-
-
+print("Your final score is, ", computer, "computer", player, "player")
+print("Your win rate is",(player/(player+computer))*100,"%")
+print("Thank you for playing")
 
