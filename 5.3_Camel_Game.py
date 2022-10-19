@@ -75,12 +75,14 @@ while play==True:
                 if rest<0:
                     rest=0
                 if ccmiles>=pmiles:
+                    print()
                     print("The Cursed Captain caught up to you while your crew was asleep")
                     print("He took all of your treasure, killed your crew, and sunk your ship")
                     print("As you watch his ship sail away sharks consume you limb by limb")
                     lost=0
                     break
                 else:
+                    print()
                     print("*One day later*")
                     print("The crew is unhappy they had to fix the ship but at least they got some sleep")
             else:
@@ -152,24 +154,37 @@ while play==True:
 
         # Death
         if drunk == 0:
+            print()
             lost=0
-            print("Your crew is sober")
-            print("There was a mutiny")
-            print("You died")
+            if rest>=5:
+                print("Your crew woke up sober")
+                print("With all of their bottled up alcoholic rage they ripped your limbs off")
+                print("The crew proceeds to drink all the rum they want as they feed your remains to the sharks")
+            else:
+                print("Even though your crew was tired they still managed to tear every limb off your body")
+                print("The crew proceeds to drink all the rum they want as they feed your remains to the sharks")
             break
         if barrels_of_rum <=0:
+            print()
             lost=0
             print("You ran out of rum")
+            print("The crew is furious")
+            print("They proceed to rip all of your limbs off and feed your remains to the sharks")
             break
         if rest>= 10:
+            print()
             lost=0
             print("Your crew died from exhaustion")
+            print("All that rum couldn't keep them on their feet")
             break
         if damage>=10:
+            print()
             lost=0
             print("Your ship sank")
+            print("You and your crew drink one last barrel of rum as sharks tear your limbs off")
             break
         if pmiles-ccmiles<=0:
+            print()
             lost=0
             print("The Cursed Captain caught up to you")
             print("He took your gold and killed your crew")
@@ -182,6 +197,7 @@ while play==True:
 
         ccmiles+=random.randint(7,14)
         if pmiles-ccmiles>0:
+            print()
             print("The Cursed Captain is", pmiles - ccmiles, "miles behind you")
             print("Don't let him catch you")
         else:
