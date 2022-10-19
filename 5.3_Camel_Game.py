@@ -66,7 +66,7 @@ while play==True:
             rest=0
             print("You decided to anchor for the night")
             print("You can take this time to repair your ship but your crew will get less sleep")
-            repair=input("Repair yes(-5 damage,-3 sleep) or no(-0 damage,-5 sleep)")
+            repair=input("Repair yes(-5 damage,-3 sleep) or no(-0 damage,-5 sleep) ")
             if repair=="yes":
                 damage-=5
                 if damage<0:
@@ -74,8 +74,15 @@ while play==True:
                 rest-=3
                 if rest<0:
                     rest=0
-                print("*One day later*")
-                print("The crew is unhappy they had to fix the ship but at least they got some sleep")
+                if ccmiles>=pmiles:
+                    print("The Cursed Captain caught up to you while your crew was asleep")
+                    print("He took all of your treasure, killed your crew, and sunk your ship")
+                    print("As you watch his ship sail away sharks consume you limb by limb")
+                    lost=0
+                    break
+                else:
+                    print("*One day later*")
+                    print("The crew is unhappy they had to fix the ship but at least they got some sleep")
             else:
                 rest-=5
                 print("*One day later*")
@@ -143,13 +150,6 @@ while play==True:
         drunk-=2
         rest+=2
 
-        ccmiles+=random.randint(7,14)
-        if pmiles-ccmiles>0:
-            print("The Cursed Captain is", pmiles - ccmiles, "miles behind you")
-            print("Don't let him catch you")
-        else:
-            done=True
-
         # Death
         if drunk == 0:
             lost=0
@@ -180,13 +180,20 @@ while play==True:
             won=1
             break
 
+        ccmiles+=random.randint(7,14)
+        if pmiles-ccmiles>0:
+            print("The Cursed Captain is", pmiles - ccmiles, "miles behind you")
+            print("Don't let him catch you")
+        else:
+            done=True
+
 
     if lost==0:
-        print("You lost")
+        print("\033[1;31m You lost\033[m")
     if won==0:
-        print("You won, congratulations captain")
-        print("You outran the Cursed Captain")
-        print("You and your crew can now celebrate with all of their treasure")
+        print("\033[1;32m You won, congratulations captain\033[m")
+        print("\033[1;32m You outran the Cursed Captain\033[m")
+        print("\033[1;32m You and your crew can now celebrate with all of their treasure\033[m")
 
     k=input("Do you want to play again (Yes/No): ")
     if k.lower()=="no":
