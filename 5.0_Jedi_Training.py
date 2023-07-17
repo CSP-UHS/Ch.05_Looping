@@ -1,15 +1,15 @@
-  #Sign your name:________________
+    #Sign your name: Shea Hermon
 
 '''
  1. Make the following program work.
    '''  
-     print("This program takes three numbers and returns the sum.")
-     total = 0
+print("This program takes three numbers and returns the sum.")
+total = 0
 
-     for i in range(3):
-         x = input("Enter a number: ")
-         total = total + i
-     print("The total is:", x)
+for i in range(3):
+    x = int(input("Enter a number: "))
+    total = total + x
+print("The total is:", total)
   
 
 
@@ -18,7 +18,8 @@
      numbers from 2 to 100, inclusive.
 '''
 
-
+for i in range(2,101,2):
+ print(i)
 
 
 
@@ -27,8 +28,11 @@
      10 down to, and including, 0. Then print the words Blast off! Remember, use
      a WHILE loop, don't use a FOR loop.
 '''
-
-
+i = 10
+while i >-1:
+    print(i)
+    i-=1
+print("Blast off!")
 
 
 
@@ -36,7 +40,8 @@
 '''
   4. Write a program that prints a random integer from 1 to 10 (inclusive).
 '''
-
+import random
+print(random.randint(1,10))
 
 
 
@@ -52,3 +57,18 @@
      if statements.
       
 '''
+pos = 0
+neg = 0
+zero = 0
+total = 0
+for i in range(7):
+    new_number = int(input("Enter a number ==> "))
+    total+=new_number
+    if new_number > 0:
+        pos+=1
+    elif new_number == 0:
+        zero+=1
+    else:
+        neg+=1
+print("The sum of the numbers is:", total)
+print("In the numbers you chose there were ", pos, " Positives ", neg, " Negatives and ", zero, " Zeros.")
